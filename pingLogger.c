@@ -17,7 +17,7 @@
 #define ICMP_PAYLOAD_LENGTH (64 - sizeof(struct icmphdr))
 #define TIMEOUT 2500
 #define NUM_PINGS 10
-#define FREQUENCY 30
+#define PERIOD 30
 #define IP_HEADER_LENGTH 20
 
 char sig_flag = 1;
@@ -241,7 +241,7 @@ int main(int argc, char **argv) {
         format_timestamp(curtime_string);
 		fprintf(output, "%s,%.1f\n", curtime_string, avg);
 		printf("%s:\t%.1fms\n",curtime_string, avg);
-		sleep(FREQUENCY);
+		sleep(PERIOD);
 	}
 
     time_t etime = time(NULL);
